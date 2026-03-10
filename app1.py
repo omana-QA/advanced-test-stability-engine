@@ -37,7 +37,7 @@ if analyze_button:
         defect_summary = defect_df.groupby("Module").agg(
             Total_Defects=("DefectID", "count"),
             Critical_Defects=("Severity", lambda x: (x == "Critical").sum()),
-            Reopened_Defects=("Status", lambda x: (x == "Reopened").sum())
+            Reopened_Defects=("Status", lambda x: (x == "Re-open").sum())
         ).reset_index()
 
         # Merge both
